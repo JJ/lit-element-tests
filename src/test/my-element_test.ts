@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-import {MyElement} from '../my-element.js';
+import { MyElement, greeting } from '../my-element.js';
 
-import {fixture, html} from '@open-wc/testing';
+import { fixture, html } from '@open-wc/testing';
 
 const assert = chai.assert;
 
@@ -21,7 +21,7 @@ suite('my-element', () => {
     assert.shadowDom.equal(
       el,
       `
-      <h1>Hello, World!</h1>
+      <h1>${greeting} World!</h1>
       <button part="button">Click Count: 0</button>
       <slot></slot>
     `
@@ -33,7 +33,7 @@ suite('my-element', () => {
     assert.shadowDom.equal(
       el,
       `
-      <h1>Hello, Test!</h1>
+      <h1>${greeting}, Test!</h1>
       <button part="button">Click Count: 0</button>
       <slot></slot>
     `
@@ -48,7 +48,7 @@ suite('my-element', () => {
     assert.shadowDom.equal(
       el,
       `
-      <h1>Hello, World!</h1>
+      <h1>${greeting}, World!</h1>
       <button part="button">Click Count: 1</button>
       <slot></slot>
     `
